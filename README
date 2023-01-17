@@ -1,0 +1,45 @@
+Introduction
+-----------------
+
+This project engaged with analyzing data of NYC fire incident dispatch data.
+The tasks for this project were to upload data to the opensearch and analyze it.
+Then, we had to create visualization in order to illustrate patterns related to the data.
+
+Requirments
+-------------------
+
+For this project there were some necessery requirments:
+To include the variable incident_datetime.
+At least one numeric and one categorical variable.
+The data should be above 100k rows.
+The script should react to the num_page and size_page and take into account an offset.
+No null values.
+Loading the data in bulks.
+
+Instructions:
+--------------------
+
+In order to load the data, we need to use terminal and build docker.
+Then, we need to docker run the following command line arguments:
+
+docker run \
+ -e DATASET_ID="8m42-w767" \
+-e APP_TOKEN="5XqyRc84EVWawou1DP1Dum1Pc" \
+-e ES_HOST="https://search-cis9760-hagay-ringel-7ziyrscwmjdg4c7s72555lipky.us-east-2.es.amazonaws.com" \
+-e ES_USERNAME="**********" \
+-e ES_PASSWORD="**********" \
+-e INDEX_NAME="bigdata" \
+requests:1.0 --page_size=  --numpages=
+
+Next to the "page_size" and "numpages" fields, we need to insert the numbers of pages/rows we want to load.
+
+The visualizatiuon:
+----------------------
+
+For this project, I created 5 visuals: 1 gauge and 4 regular visuals.
+The gauge- Indicates the number of rows I loaded at this project- 5,429,532.
+Visual #1- Show an overview of the incident classification in a pie by percentage.
+Visual #2- Show the trend of each incident classification over a time frame of 10 years (2005-2015) in a way we can see trends.
+Visual #3- This visual is a table that shows the average ladders used per incident per borough.
+Visual #4- This visual is a bit more specific than the others, as it's a bar that indicates on the number of the incident: medical assist civilian,
+per borough during 2020 (Covid-19 year).
